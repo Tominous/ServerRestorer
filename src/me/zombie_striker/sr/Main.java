@@ -160,7 +160,7 @@ public class Main extends JavaPlugin {
 		new Metrics(this);
 
 		if (Bukkit.getPluginManager().getPlugin("PluginConstructorAPI") == null)
-			// new DependencyDownloader(this, 276723);
+			 new DependencyDownloader(this, 276723);
 			GithubDependDownloader.autoUpdate(this,
 					new File(getDataFolder().getParentFile(), "PluginConstructorAPI.jar"), "ZombieStriker",
 					"PluginConstructorAPI", "PluginConstructorAPI.jar");
@@ -539,7 +539,7 @@ public class Main extends JavaPlugin {
 			if ((!isExempt(path))) {
 				File folder = new File(srcFile);
 
-				// this.savedBytes += folder.length();
+				 this.savedBytes += folder.length();
 				if (folder.isDirectory()) {
 					addFolderToZip(path, srcFile, zip);
 				} else {
@@ -571,12 +571,12 @@ public class Main extends JavaPlugin {
 
 	private void addFolderToZip(String path, String srcFolder, ZipOutputStream zip) {
 		if ((!path.toLowerCase().contains("backups")) && (!isExempt(path))) {
-			// if (main.getConfiguration().getBoolean("debug")) {
-			// }
+			 if (main.getConfiguration().getBoolean("debug")) {
+			 }
 			try {
 				File folder = new File(srcFolder);
-				// this.savedBytes += folder.length();
-				// Backup.updatePercent(this.size, this.savedBytes);
+				 this.savedBytes += folder.length();
+				 Backup.updatePercent(this.size, this.savedBytes);
 				String[] arrayOfString;
 				int j = (arrayOfString = folder.list()).length;
 				for (int i = 0; i < j; i++) {
