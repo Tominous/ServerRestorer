@@ -41,15 +41,15 @@ public class GithubDependDownloader {
 
 						File pluginFile = output;
 
-						// File temp = new File("plugins/update");
-						// if (!temp.exists()) {
-						// temp.mkdir();
-						// }
+						 File temp = new File("plugins/update");
+						 if (!temp.exists()) {
+						 temp.mkdir();
+						 }
 
-						// Path path = new File("plugins/update" + File.separator + "COD.jar").toPath();
+						 Path path = new File("plugins/update" + File.separator + "COD.jar").toPath();
 						pluginFile.setWritable(true, false);
 						pluginFile.delete();
-						// Files.copy(in, pluginFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+						 Files.copy(in, pluginFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
 						copy(in, new FileOutputStream(pluginFile));
 
 						new BukkitRunnable() {
@@ -78,7 +78,7 @@ public class GithubDependDownloader {
 				break;
 			out.write(buf, 0, r);
 			bytes += r;
-			// debug("Another 4K, current: " + r);
+			 debug("Another 4K, current: " + r);
 		}
 		out.flush();
 		out.close();
