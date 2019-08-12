@@ -54,7 +54,7 @@ public class DependencyDownloader {
 
 	private Plugin p;
 
-	private boolean debug = false;
+	private boolean debug = true;
 	private String downloadURL = null;
 	private String futuremd5;
 	private String downloadName;
@@ -186,7 +186,7 @@ public class DependencyDownloader {
 								- counter);
 						futuremd5 = (String) latest.get("md5");
 						String channel = (String) latest.get("releaseType");
-						// String name = (String) latest.get("name");
+						 String name = (String) latest.get("name");
 						if (allowedChannels.contains(Channel
 								.matchChannel(channel.toUpperCase()))
 						/* && !hasTag(name) */) {
